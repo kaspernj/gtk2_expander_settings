@@ -33,6 +33,7 @@ Jeweler::Tasks.new do |gem|
       require dep[:require].to_s
       puts "Skipping '#{dep[:gem]}' - already installed."
     rescue Gem::LoadError, LoadError
+      puts "Adding conditional gem to dependencies '#{dep[:gem]}' - it is not installed."
       gem.add_dependency dep[:gem]
     end
   end
