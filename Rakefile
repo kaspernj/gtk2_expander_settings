@@ -22,21 +22,6 @@ Jeweler::Tasks.new do |gem|
   gem.email = "k@spernj.org"
   gem.authors = ["Kasper Johansen"]
   # dependencies defined in Gemfile
-  
-  #Conditional dependencies (make them work with installed dist packages and dont comile).
-  deps = [:gtk2]
-  
-  deps.each do |dep|
-    dep = {:require => dep, :gem => dep} if !dep.is_a?(Hash)
-    
-    begin
-      require dep[:require].to_s
-      puts "Skipping '#{dep[:gem]}' - already installed."
-    rescue Gem::LoadError, LoadError
-      puts "Adding conditional gem to dependencies '#{dep[:gem]}' - it is not installed."
-      gem.add_dependency dep[:gem]
-    end
-  end
 end
 Jeweler::RubygemsDotOrgTasks.new
 

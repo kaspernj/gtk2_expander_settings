@@ -3,6 +3,7 @@ source "http://rubygems.org"
 # Example:
 #   gem "activesupport", ">= 2.3.5"
 
+gem "gtk2"
 gem "knjrbfw"
 
 # Add dependencies to develop your gem here.
